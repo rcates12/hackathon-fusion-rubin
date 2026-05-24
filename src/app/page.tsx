@@ -135,7 +135,7 @@ export default function Home() {
         </h1>
 
         <p className="text-xl text-gray-600 dark:text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed">
-          Harness the power of advanced AI without the complexity. Our platform provides enterprise-grade intelligence that's easy to integrate and scales with your business.
+          Harness the power of advanced AI without the complexity. Our platform provides enterprise-grade intelligence that&apos;s easy to integrate and scales with your business.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
