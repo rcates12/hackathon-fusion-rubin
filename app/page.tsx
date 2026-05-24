@@ -21,8 +21,8 @@ export default function HomePage() {
           <h1 className="text-6xl sm:text-7xl md:text-8xl font-display font-bold leading-tight mb-6">
             Dark Editorial
           </h1>
-          <p className="text-lg sm:text-xl font-light leading-relaxed mb-12" style={{ color: 'rgba(255, 255, 255, 0.5)' }}>
-            A microsite built for telling stories at scale.
+          <p className="text-base md:text-lg font-normal leading-relaxed mb-12" style={{ color: 'rgba(255, 255, 255, 0.5)' }}>
+            Welcome to Pendo's design philosophy — The systems that power intentional product experiences.
           </p>
           <div className="flex justify-center">
             <svg
