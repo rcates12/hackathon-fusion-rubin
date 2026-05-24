@@ -1,0 +1,108 @@
+/*
+ * Pendo brand tokens — CSS variables.
+ *
+ * Source of truth: extracted/BRAND.md in the parent workspace (or BRAND.md
+ * in this repo once extracted). Every hex/value below comes from BRAND.md.
+ * Do NOT introduce new colors here — if a design needs a hue we don't have,
+ * propose it in BRAND.md first and port back.
+ *
+ * Theme strategy:
+ *   - Raw palette tokens (--color-*) are theme-invariant. They never change
+ *     between light and dark mode; they ARE the palette.
+ *   - Semantic tokens (--bg, --text-primary, --accent, etc.) re-bind based
+ *     on the active theme. Default is LIGHT (cream background, near-black
+ *     text). Switching to dark requires setting data-theme="dark" on a
+ *     scope (typically <html> or <body>).
+ *   - Pendo Pank stays the accent in both themes per BRAND.md.
+ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* ---- Raw palette (theme-invariant) ---- */
+    --color-pendo-pink: #ff4876;
+    --color-black: #000000;
+    --color-graphite: #303030;
+    --color-light-mode: #edeee7;
+    --color-white: #ffffff;
+
+    /* Pink tones P1–P8 — for gradients, accents, branded illustration. */
+    --color-pink-1: #ff9ed7;
+    --color-pink-2: #fe82ce;
+    --color-pink-3: #fd6aa5;
+    --color-pink-4: #db3dad;
+    --color-pink-5: #d80574;
+    --color-pink-6: #bb076b;
+    --color-pink-7: #97127a;
+    --color-pink-8: #6c286a;
+
+    /* Warm neutrals. */
+    --color-neutral-1: #c7c8c2;
+    --color-neutral-2: #a1a29e;
+    --color-neutral-3: #7c7c79;
+    --color-neutral-4: #565655;
+    --color-neutral-5: #181818;
+
+    /* PREDICT gradient — the canonical Pendo display-number / stat gradient.
+       Matches product-style-guide.md §2.6/§2.7. Used by <GradientText> as
+       its default, and available as the `bg-predict-gradient` Tailwind
+       utility for any other surface that wants the same treatment. */
+    --predict-gradient: linear-gradient(
+      135deg,
+      #97127a 0%,
+      #d80574 35%,
+      #fd6aa5 70%,
+      #ff9ed7 100%
+    );
+
+    /* ---- Semantic tokens — LIGHT mode (default) ---- */
+    --bg: var(--color-light-mode);
+    --bg-card: var(--color-white);
+    --bg-elevated: var(--color-light-mode);
+    --text-primary: var(--color-neutral-5);
+    --text-secondary: var(--color-neutral-4);
+    --text-muted: var(--color-neutral-2);
+    --border: var(--color-neutral-1);
+    --border-subtle: var(--color-light-mode);
+    --accent: var(--color-pendo-pink);
+  }
+
+  /* ---- Semantic tokens — DARK mode ---- */
+  /* Apply via data-theme="dark" on <html> or <body>, or on a section scope
+     to flip just that section. Both selectors are supported so the seed kit
+     works with whichever convention Fusion ends up picking. */
+  [data-theme='dark'],
+  .theme-dark {
+    --bg: var(--color-black);
+    --bg-card: #121212;
+    --bg-elevated: var(--color-neutral-5);
+    --text-primary: var(--color-white);
+    --text-secondary: var(--color-neutral-2);
+    --text-muted: var(--color-neutral-3);
+    --border: var(--color-graphite);
+    --border-subtle: var(--color-neutral-5);
+    --accent: var(--color-pendo-pink);
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--text-primary);
+    font-family: var(--font-inter), system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Headlines default to Sora per BRAND.md typography section. Body copy
+     stays in Inter (the body { font-family } above) unless explicitly
+     overridden. */
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-sora), var(--font-inter), system-ui, sans-serif;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+}
