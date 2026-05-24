@@ -8,21 +8,29 @@ export default function HomePage() {
   return (
     <main data-theme="dark" className="bg-black text-white">
       {/* Hero Section — Full-bleed editorial opener */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-pendo-gradient-dark px-6 py-24">
-        <div className="absolute inset-0 opacity-30" aria-hidden />
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black px-6 py-24">
+        <div
+          className="absolute inset-0 opacity-20"
+          style={{
+            backgroundImage:
+              'radial-gradient(ellipse at 0% 100%, #FF9ED7 0%, #FD6AA5 25%, #D80574 50%, #97127A 75%, #000000 100%)',
+          }}
+          aria-hidden
+        />
         <div className="relative max-w-4xl text-center">
           <h1 className="text-6xl sm:text-7xl md:text-8xl font-display font-bold leading-tight mb-6">
             Dark Editorial
           </h1>
-          <p className="text-lg sm:text-xl text-neutral-2 font-light leading-relaxed mb-12">
+          <p className="text-lg sm:text-xl font-light leading-relaxed mb-12" style={{ color: 'rgba(255, 255, 255, 0.5)' }}>
             A microsite built for telling stories at scale.
           </p>
           <div className="flex justify-center">
             <svg
-              className="w-6 h-6 text-accent animate-bounce"
+              className="w-6 h-6 animate-bounce"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
+              style={{ color: '#FF4876' }}
             >
               <path
                 strokeLinecap="round"
