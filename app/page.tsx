@@ -91,6 +91,39 @@ export default function HomePage() {
         </div>
       </Container>
 
+      <Container as="section" theme="light" className="py-24 sm:py-32">
+        <SectionHeader
+          align="center"
+          eyebrow="Build with confidence"
+          heading="Everything you need to get started"
+          headingAccent="get started"
+          subhead="Our primitives are designed to be flexible and composable. Combine them to create powerful experiences that match your brand."
+        />
+        <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-3">
+          <GlassCard align="center">
+            <h3 className="text-2xl">Flexible</h3>
+            <p className="text-secondary">
+              Mix and match primitives to build custom layouts that scale
+              with your product.
+            </p>
+          </GlassCard>
+          <GlassCard align="center">
+            <h3 className="text-2xl">Accessible</h3>
+            <p className="text-secondary">
+              Built with semantic HTML and ARIA best practices to ensure
+              your product works for everyone.
+            </p>
+          </GlassCard>
+          <GlassCard align="center">
+            <h3 className="text-2xl">Themeable</h3>
+            <p className="text-secondary">
+              Light, dark, or custom themes—switch context with a single
+              prop and watch everything adapt.
+            </p>
+          </GlassCard>
+        </div>
+      </Container>
+
       <CTABanner
         showCard
         theme="light"
