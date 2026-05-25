@@ -18,10 +18,6 @@ export default function HomePage() {
           aria-hidden
         />
         <div className="relative max-w-4xl text-center">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <div className="w-3 h-px bg-pendo-pink" />
-            <p className="text-xs font-bold uppercase tracking-widest text-pendo-pink">Editorial Opener</p>
-          </div>
           <h1 className="text-6xl sm:text-7xl md:text-8xl font-display font-bold leading-tight mb-6">
             Dark Editorial
           </h1>
