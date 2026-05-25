@@ -18,13 +18,17 @@ export default function HomePage() {
           aria-hidden
         />
         <div className="relative max-w-4xl text-center">
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <div className="w-3 h-px bg-pendo-pink" />
+            <p className="text-xs font-bold uppercase tracking-widest text-pendo-pink">Editorial Opener</p>
+          </div>
           <h1 className="text-6xl sm:text-7xl md:text-8xl font-display font-bold leading-tight mb-6">
             Dark Editorial
           </h1>
-          <p className="text-base md:text-lg font-normal leading-relaxed mb-12" style={{ color: 'rgba(255, 255, 255, 0.5)' }}>
-            Welcome to Pendo's design philosophy — The systems that power intentional product experiences.
+          <p className="text-base md:text-lg font-normal leading-relaxed" style={{ color: 'rgba(255, 255, 255, 0.5)' }}>
+            Welcome to Pendo's Design Philosophy
           </p>
-          <div className="flex justify-center">
+          <div className="flex justify-center mt-12">
             <svg
               className="w-6 h-6 animate-bounce"
               fill="none"
@@ -47,26 +51,27 @@ export default function HomePage() {
       <section className="py-24 sm:py-32 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="mb-16">
-            <p className="text-sm font-mono tracking-eyebrow text-accent uppercase mb-4">
-              — CHAPTER ONE
-            </p>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-3 h-px bg-pendo-pink" />
+              <p className="text-xs font-bold uppercase tracking-widest text-pendo-pink">Chapter One</p>
+            </div>
             <h2 className="text-5xl sm:text-6xl font-display font-bold mb-6">
               The Foundation
             </h2>
-            <p className="text-lg text-neutral-2">
-              Every great story begins with a solid foundation, and every great design system does too.
+            <p className="text-base md:text-lg text-neutral-2 font-normal">
+              Every great design system begins with a solid foundation.
             </p>
           </div>
 
           {/* 1.1 */}
           <div className="mb-16 pb-16 border-b border-neutral-3">
-            <p className="text-sm font-mono tracking-eyebrow text-accent uppercase mb-3">
+            <p className="text-xs font-bold uppercase tracking-widest text-pendo-pink mb-3">
               1.1
             </p>
-            <h3 className="text-3xl sm:text-4xl font-display font-bold mb-6">
+            <h3 className="text-2xl sm:text-3xl font-display font-bold mb-6">
               Semantic theming with CSS variables
             </h3>
-            <div className="space-y-4 text-neutral-2">
+            <div className="space-y-4 text-neutral-2 text-base">
               <p>
                 The color system adapts to context. A single set of semantic tokens—bg, text-primary,
                 accent—rebinds based on theme scope, eliminating the need for class swapping or
@@ -79,7 +84,7 @@ export default function HomePage() {
                 and dark mode isn't two components—it's one component with two semantic bindings.
               </p>
             </div>
-            <ul className="mt-6 space-y-2 text-neutral-2">
+            <ul className="mt-6 space-y-2 text-neutral-2 text-base">
               <li>✓ No runtime theme switching complexity</li>
               <li>✓ Scope-based theming (nest dark inside light or vice versa)</li>
               <li>✓ Semantic tokens stay predictable across contexts</li>
@@ -88,13 +93,13 @@ export default function HomePage() {
 
           {/* 1.2 */}
           <div className="mb-16 pb-16 border-b border-neutral-3">
-            <p className="text-sm font-mono tracking-eyebrow text-accent uppercase mb-3">
+            <p className="text-xs font-bold uppercase tracking-widest text-pendo-pink mb-3">
               1.2
             </p>
-            <h3 className="text-3xl sm:text-4xl font-display font-bold mb-6">
-              Tailwind + CSS variables in concert
+            <h3 className="text-2xl sm:text-3xl font-display font-bold mb-6">
+              Tailwind and CSS variables in concert
             </h3>
-            <div className="space-y-4 text-neutral-2">
+            <div className="space-y-4 text-neutral-2 text-base">
               <p>
                 Tailwind's utility layer provides the convenience of class-based styling, while
                 CSS variables handle the theme rebinding underneath. This hybrid approach gives
@@ -106,7 +111,7 @@ export default function HomePage() {
                 those colors auto-updates—no recompilation needed.
               </p>
             </div>
-            <ul className="mt-6 space-y-2 text-neutral-2">
+            <ul className="mt-6 space-y-2 text-neutral-2 text-base">
               <li>✓ Tailwind utilities feel natural (bg-bg, text-primary)</li>
               <li>✓ CSS variables handle the re-binding</li>
               <li>✓ Single source of truth in globals.css</li>
@@ -115,13 +120,13 @@ export default function HomePage() {
 
           {/* 1.3 */}
           <div className="mb-16">
-            <p className="text-sm font-mono tracking-eyebrow text-accent uppercase mb-3">
+            <p className="text-xs font-bold uppercase tracking-widest text-pendo-pink mb-3">
               1.3
             </p>
-            <h3 className="text-3xl sm:text-4xl font-display font-bold mb-6">
+            <h3 className="text-2xl sm:text-3xl font-display font-bold mb-6">
               Pendo Pank as the persistent accent
             </h3>
-            <div className="space-y-4 text-neutral-2">
+            <div className="space-y-4 text-neutral-2 text-base">
               <p>
                 The accent color (#FF4876, Pendo Pank) stays constant across both light and dark
                 themes. It's the brand signal—when users see that pink in any context, they know
@@ -133,7 +138,7 @@ export default function HomePage() {
                 accent overuse water down impact.
               </p>
             </div>
-            <ul className="mt-6 space-y-2 text-neutral-2">
+            <ul className="mt-6 space-y-2 text-neutral-2 text-base">
               <li>✓ Consistent brand presence across themes</li>
               <li>✓ High contrast in dark mode (#FF4876 on black)</li>
               <li>✓ Reserve for key interaction moments</li>
@@ -146,26 +151,27 @@ export default function HomePage() {
       <section className="py-24 sm:py-32 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="mb-16">
-            <p className="text-sm font-mono tracking-eyebrow text-accent uppercase mb-4">
-              — CHAPTER TWO
-            </p>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-3 h-px bg-pendo-pink" />
+              <p className="text-xs font-bold uppercase tracking-widest text-pendo-pink">Chapter Two</p>
+            </div>
             <h2 className="text-5xl sm:text-6xl font-display font-bold mb-6">
               Composable Primitives
             </h2>
-            <p className="text-lg text-neutral-2">
-              Small, intentional components that compose into complex layouts without inducing bloat or abstraction overhead.
+            <p className="text-base md:text-lg text-neutral-2 font-normal">
+              Small, intentional components that compose without bloat.
             </p>
           </div>
 
           {/* 2.1 */}
           <div className="mb-16 pb-16 border-b border-neutral-3">
-            <p className="text-sm font-mono tracking-eyebrow text-accent uppercase mb-3">
+            <p className="text-xs font-bold uppercase tracking-widest text-pendo-pink mb-3">
               2.1
             </p>
-            <h3 className="text-3xl sm:text-4xl font-display font-bold mb-6">
-              Container: scope and rhythm
+            <h3 className="text-2xl sm:text-3xl font-display font-bold mb-6">
+              Container for scope and rhythm
             </h3>
-            <div className="space-y-4 text-neutral-2">
+            <div className="space-y-4 text-neutral-2 text-base">
               <p>
                 The Container primitive is a scoped section wrapper. Pass theme="dark" to flip
                 all semantic tokens inside, or className="py-24" to control vertical rhythm.
@@ -181,13 +187,13 @@ export default function HomePage() {
 
           {/* 2.2 */}
           <div className="mb-16 pb-16 border-b border-neutral-3">
-            <p className="text-sm font-mono tracking-eyebrow text-accent uppercase mb-3">
+            <p className="text-xs font-bold uppercase tracking-widest text-pendo-pink mb-3">
               2.2
             </p>
-            <h3 className="text-3xl sm:text-4xl font-display font-bold mb-6">
-              GlassCard: surfaces with intent
+            <h3 className="text-2xl sm:text-3xl font-display font-bold mb-6">
+              GlassCard surfaces with intent
             </h3>
-            <div className="space-y-4 text-neutral-2">
+            <div className="space-y-4 text-neutral-2 text-base">
               <p>
                 A card primitive with two variants: solid (contained, no border) and glass
                 (semitransparent blur). Solid is the default and the preferred execution—it's
@@ -203,13 +209,13 @@ export default function HomePage() {
 
           {/* 2.3 */}
           <div>
-            <p className="text-sm font-mono tracking-eyebrow text-accent uppercase mb-3">
+            <p className="text-xs font-bold uppercase tracking-widest text-pendo-pink mb-3">
               2.3
             </p>
-            <h3 className="text-3xl sm:text-4xl font-display font-bold mb-6">
-              CTAButton: the interaction primitive
+            <h3 className="text-2xl sm:text-3xl font-display font-bold mb-6">
+              CTAButton as interaction primitive
             </h3>
-            <div className="space-y-4 text-neutral-2">
+            <div className="space-y-4 text-neutral-2 text-base">
               <p>
                 Two variants: primary (solid, accent background) and ghost (outline, minimal).
                 In dark mode, primary is crisp: white text on #FF4876. Ghost provides a softer
@@ -229,27 +235,27 @@ export default function HomePage() {
       <section className="py-24 sm:py-32 px-6 border-t border-neutral-3">
         <div className="max-w-4xl mx-auto">
           <div className="mb-16">
-            <p className="text-sm font-mono tracking-eyebrow text-accent uppercase mb-4">
-              — CHAPTER THREE
-            </p>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-3 h-px bg-pendo-pink" />
+              <p className="text-xs font-bold uppercase tracking-widest text-pendo-pink">Chapter Three</p>
+            </div>
             <h2 className="text-5xl sm:text-6xl font-display font-bold mb-6">
               Building with Intent
             </h2>
-            <p className="text-lg text-neutral-2">
-              Every choice compounds. Choose primitives over one-off solutions. Choose semantics
-              over magic numbers. Choose restraint over embellishment.
+            <p className="text-base md:text-lg text-neutral-2 font-normal">
+              Every choice compounds. Choose primitives, semantics, and restraint.
             </p>
           </div>
 
           {/* 3.1 */}
           <div>
-            <p className="text-sm font-mono tracking-eyebrow text-accent uppercase mb-3">
+            <p className="text-xs font-bold uppercase tracking-widest text-pendo-pink mb-3">
               3.1
             </p>
-            <h3 className="text-3xl sm:text-4xl font-display font-bold mb-6">
+            <h3 className="text-2xl sm:text-3xl font-display font-bold mb-6">
               Ready to build your story
             </h3>
-            <p className="text-neutral-2 mb-8">
+            <p className="text-neutral-2 text-base mb-8">
               You now have everything you need to craft beautiful, coherent experiences. Edit
               app/page.tsx, build with the primitives in components/primitives/, and ship.
               The system scales with you.
