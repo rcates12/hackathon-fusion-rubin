@@ -140,8 +140,8 @@ interface Metric {
 }
 
 const METRICS: Metric[] = [
-  { value: '40–50', label: 'Concurrent in-product guides running at any time' },
-  { value: '2–3 wks', label: 'Typical experiment cadence per quarterly release' },
+  { value: '40–50', label: 'Concurrent in-product guides running at any time', hero: true },
+  { value: '2–3 wks', label: 'Typical experiment cadence per quarterly release', hero: true },
   { value: '18%', label: 'Increase in CTA clicks for an event-promotion guide', hero: true },
 ];
 
