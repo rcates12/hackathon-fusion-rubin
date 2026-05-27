@@ -57,92 +57,30 @@ export const metadata = {
   title:
     'How Sage scaled data-driven in-product messaging with Pendo Guide experiments',
   description:
-    'A short video preview drove an 18% lift in CTA clicks — one of many wins from Sage\'s new in-product testing practice.',
+    'A short video preview drove an 18% lift in CTA clicks — one of many wins from Sage’s new in-product testing practice.',
 };
 
 export default function SageCustomerStoryPage() {
   return (
     <>
       <ProductHero
-        layout="split"
+        layout="centered"
         theme="light"
         eyebrow={<Eyebrow>Customer story</Eyebrow>}
         headline={
           <>
-            How Sage scaled{' '}
-            <span style={{ color: '#FF4876' }}>data-driven in-product messaging</span> with
-            Pendo Guide experiments
+            Ship what works.{' '}
+            <span className="text-pendo-pink">Prove it with experiments.</span>
           </>
         }
-        subhead={
-          <>
-            <div className="font-display text-3xl font-bold text-pendo-pink">18%</div>
-            <p className="mt-2 text-lg text-secondary">
-              Lift in CTA clicks from a short video preview — one of many wins from Sage's new in-product testing practice.
-            </p>
-          </>
-        }
+        subhead="A short video preview drove an 18% lift in CTA clicks — one of many wins from Sage’s new in-product testing practice."
         actions={
           <>
-            <CTAButton href="#story" variant="primary" theme="light" icon="arrow">
-              Read the case study
-            </CTAButton>
-            <CTAButton href="#guides" variant="ghost" theme="light">
+            <CTAButton href="#story">Read the case study</CTAButton>
+            <CTAButton href="#guides" variant="ghost">
               Explore Pendo Guides
             </CTAButton>
           </>
-        }
-        media={
-          <div className="rounded-2xl border border-border-subtle bg-white p-6 sm:p-8">
-            {/* Experiment dashboard placeholder */}
-            <div className="space-y-6">
-              {/* Header */}
-              <div className="border-b border-border-subtle pb-4">
-                <p className="font-mono text-xs uppercase tracking-eyebrow text-muted">
-                  A/B Test Results
-                </p>
-                <h3 className="mt-2 font-display text-lg font-bold text-primary">
-                  Event-promotion guide experiment
-                </h3>
-              </div>
-
-              {/* Variant comparison */}
-              <div className="grid grid-cols-2 gap-4">
-                <div className="rounded-lg bg-bg p-4">
-                  <p className="font-mono text-xs uppercase tracking-eyebrow text-muted">
-                    Control
-                  </p>
-                  <div className="mt-3 h-16 rounded bg-border-subtle" />
-                  <p className="mt-3 text-sm text-secondary">Copy only</p>
-                  <p className="mt-2 font-display text-lg font-bold text-primary">
-                    2,400 clicks
-                  </p>
-                </div>
-                <div className="rounded-lg bg-bg p-4">
-                  <p className="font-mono text-xs uppercase tracking-eyebrow text-muted">
-                    Winner
-                  </p>
-                  <div className="mt-3 h-16 rounded bg-border-subtle" />
-                  <p className="mt-3 text-sm text-secondary">Copy + video</p>
-                  <p className="mt-2 font-display text-lg font-bold text-pendo-pink">
-                    2,832 clicks
-                  </p>
-                </div>
-              </div>
-
-              {/* Key metric */}
-              <div className="border-t border-border-subtle pt-4">
-                <div className="text-center">
-                  <p className="font-mono text-xs uppercase tracking-eyebrow text-muted">
-                    Lift
-                  </p>
-                  <p className="mt-2 font-display text-4xl font-bold text-pendo-pink">
-                    +18%
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
         }
       />
 
@@ -200,49 +138,32 @@ interface Metric {
 }
 
 const METRICS: Metric[] = [
-  { value: '40–50', label: 'Concurrent in-product guides running at any time', hero: true },
-  { value: '2–3 wks', label: 'Typical experiment cadence per quarterly release', hero: true },
+  { value: '40–50', label: 'Concurrent in-product guides running at any time' },
+  { value: '2–3 wks', label: 'Typical experiment cadence per quarterly release' },
   { value: '18%', label: 'Increase in CTA clicks for an event-promotion guide', hero: true },
 ];
 
 function MetricsRow() {
   return (
-    <Container as="section" className="py-20 sm:py-24">
-      <style>{`
-        .stat-gradient {
-          background: linear-gradient(135deg, #97127a 0%, #d80574 35%, #fd6aa5 70%, #ff9ed7 100%);
-          -webkit-background-clip: text;
-          background-clip: text;
-          -webkit-text-fill-color: transparent;
-        }
-        .divider {
-          width: 1px;
-          height: 80px;
-          background-color: rgba(6, 1, 25, 0.08);
-        }
-      `}</style>
-      <div className="flex flex-col items-center gap-12">
-        <div className="flex items-center gap-3">
-          <div className="w-3 h-px bg-pendo-pink" />
-          <p className="font-sans font-bold text-xs uppercase tracking-widest text-pendo-pink">
-            By the numbers
-          </p>
-        </div>
-        <div id="story" className="flex items-center justify-center gap-12">
-          {METRICS.map((m, i) => (
-            <div key={m.label} className="flex items-center gap-12">
-              <div className="flex flex-col items-center gap-2">
-                <p className="stat-gradient font-display text-7xl font-bold">
-                  {m.value}
-                </p>
-                <p className="text-sm text-center text-muted font-sans" style={{ maxWidth: '120px' }}>
-                  {m.label.split(' ').slice(0, 4).join(' ')}
-                </p>
-              </div>
-              {i < METRICS.length - 1 && <div className="divider" />}
-            </div>
-          ))}
-        </div>
+    <Container as="section" className="border-t border-border-subtle py-16 sm:py-20">
+      <div id="story" className="grid grid-cols-1 gap-6 sm:grid-cols-3">
+        {METRICS.map((m) => (
+          <div
+            key={m.label}
+            className="flex flex-col gap-2 rounded-2xl border border-border-subtle bg-bg-card p-8"
+          >
+            <p
+              className={
+                m.hero
+                  ? 'font-display text-5xl font-bold text-primary'
+                  : 'font-display text-2xl font-medium text-muted'
+              }
+            >
+              {m.value}
+            </p>
+            <p className="text-sm text-secondary">{m.label}</p>
+          </div>
+        ))}
       </div>
     </Container>
   );
@@ -306,14 +227,14 @@ function ChallengeSolutionResults() {
           body="Sage relied on in-app guides to educate users, but experimentation was slow and manual — making it hard to know what worked. With 40–50 live guides at a time, the team needed faster insights and clearer data to guide decisions."
         />
         <Trio
-          eyebrow="Pendo'ing it"
+          eyebrow="Pendo’ing it"
           heading="Side-by-side A/B testing"
-          body="By adopting Pendo's Guides experiments, Sage shifted from guesswork to side-by-side A/B testing — enabling faster learning and evidence-backed decisions. The team built a simple, scalable testing framework tied to real user behaviors."
+          body="By adopting Pendo’s Guides experiments, Sage shifted from guesswork to side-by-side A/B testing — enabling faster learning and evidence-backed decisions. The team built a simple, scalable testing framework tied to real user behaviors."
         />
         <Trio
           eyebrow="The results"
           heading="An 18% lift, and a new playbook"
-          body="A short video preview drove an 18% lift in CTA clicks — one of many wins from Sage's new testing practice. Experiments now fuel smarter content, reusable assets, and more confident conversations with leadership."
+          body="A short video preview drove an 18% lift in CTA clicks — one of many wins from Sage’s new testing practice. Experiments now fuel smarter content, reusable assets, and more confident conversations with leadership."
         />
       </div>
     </Container>
@@ -347,7 +268,7 @@ function NarrativeSection() {
     <Container as="section" width="narrow" className="py-16 sm:py-20">
       <Eyebrow>The story</Eyebrow>
       <h2 className="mt-4 font-display text-3xl font-bold tracking-tight text-primary sm:text-4xl">
-        The shift from "ship and hope"
+        The shift from “ship and hope”
       </h2>
       <div className="mt-6 flex flex-col gap-5 text-base text-secondary sm:text-lg">
         <p>
@@ -360,21 +281,21 @@ function NarrativeSection() {
 
         {/* PLANTED WEAKNESS #2 — pull quote rendered as plain italic body text. */}
         <blockquote className="italic text-secondary">
-          "We were always trying different guides, but it was a very manual
-          process. We'd run one version, wait, then try a new one and hope it
-          moved the needle." — John Gardiner, Principal Content Designer, Sage
+          “We were always trying different guides, but it was a very manual
+          process. We’d run one version, wait, then try a new one and hope it
+          moved the needle.” — John Gardiner, Principal Content Designer, Sage
         </blockquote>
 
         <p>
           Scale added pressure. With 40–50 guides running (carefully segmented to
           avoid overload), the organization wanted clearer answers: which
           message, visual, or format actually resonates with customers the most?
-          Leadership — true to a finance software company's culture — expected
+          Leadership — true to a finance software company’s culture — expected
           numbers to justify decisions.
         </p>
         <p>
           At the same time, the team wanted more sophistication in what they
-          measured. Much of the desired impact (clicking a "Register now" button
+          measured. Much of the desired impact (clicking a “Register now” button
           inside a guide, for example) happens within the guide itself, not just
           via downstream product usage — making attribution and success-metric
           setup trickier with traditional approaches.
@@ -412,7 +333,7 @@ function ExperimentsWin() {
         />
         <Bullet
           term="Success metrics"
-          desc={'Define clear, behavior-based goals (e.g., "Register now" clicks).'}
+          desc="Define clear, behavior-based goals (e.g., “Register now” clicks)."
         />
         <Bullet
           term="Operational cadence"
@@ -458,7 +379,7 @@ function FeaturedExperiment() {
         <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2">
           <VariantCard
             label="Variant A · Control"
-            description={"Copy-only guide with \"Register now\" CTA. No motion, no preview imagery."}
+            description="Copy-only guide with “Register now” CTA. No motion, no preview imagery."
           />
           <VariantCard
             label="Variant B · Winner"
@@ -488,7 +409,7 @@ function VariantCard({
       <p className="text-base text-secondary">{description}</p>
       {winner ? (
         <p className="mt-2 inline-flex items-center gap-2 text-sm font-medium text-pendo-pink">
-          <span aria-hidden>↑</span> +18% lift in "Register now" clicks
+          <span aria-hidden>↑</span> +18% lift in “Register now” clicks
         </p>
       ) : null}
     </div>
@@ -508,16 +429,16 @@ function ClearWinner() {
       </h2>
       <p className="mt-6 text-base text-secondary sm:text-lg">
         The video variant outperformed the copy-only control, delivering an 18%
-        increase in "Register now" clicks. Beyond the one-off lift, the team now
+        increase in “Register now” clicks. Beyond the one-off lift, the team now
         has reusable video assets they can recycle for recurring education
         events — compounding returns on the initial creative effort.
       </p>
 
       {/* PLANTED WEAKNESS #2 (second instance) — same flat-italic treatment. */}
       <blockquote className="mt-6 italic text-secondary">
-        "Executives love numbers. Now I can say: here are the variants, here are
-        the metrics, and here's what won. That shapes where we take in-product
-        messaging next." — John Gardiner
+        “Executives love numbers. Now I can say: here are the variants, here are
+        the metrics, and here’s what won. That shapes where we take in-product
+        messaging next.” — John Gardiner
       </blockquote>
 
       <p className="mt-6 text-base text-secondary sm:text-lg">
@@ -561,8 +482,8 @@ function KeyOutcomes() {
         ))}
       </ul>
       <p className="mt-10 max-w-3xl text-base text-muted sm:text-lg">
-        "In the end, everything boils down to changing user behavior. Experiments
-        help us be clear on what success looks like — and how to get there."
+        “In the end, everything boils down to changing user behavior. Experiments
+        help us be clear on what success looks like — and how to get there.”
         <Link
           href="#story"
           className="ml-2 font-medium text-pendo-pink hover:underline"
