@@ -86,17 +86,54 @@ export default function SageCustomerStoryPage() {
           </>
         }
         media={
-          <div className="flex flex-col gap-4 rounded-2xl border border-border-subtle bg-white p-8">
-            <div className="text-center">
-              <p className="font-mono text-xs uppercase tracking-eyebrow text-muted">
-                Headline result
-              </p>
-              <p className="mt-4 font-display text-5xl font-bold text-pendo-pink">
-                18%
-              </p>
-              <p className="mt-3 text-base text-secondary">
-                Increase in CTA clicks for an event-promotion guide
-              </p>
+          <div className="rounded-2xl border border-border-subtle bg-white p-6 sm:p-8">
+            {/* Experiment dashboard placeholder */}
+            <div className="space-y-6">
+              {/* Header */}
+              <div className="border-b border-border-subtle pb-4">
+                <p className="font-mono text-xs uppercase tracking-eyebrow text-muted">
+                  A/B Test Results
+                </p>
+                <h3 className="mt-2 font-display text-lg font-bold text-primary">
+                  Event-promotion guide experiment
+                </h3>
+              </div>
+
+              {/* Variant comparison */}
+              <div className="grid grid-cols-2 gap-4">
+                <div className="rounded-lg bg-bg p-4">
+                  <p className="font-mono text-xs uppercase tracking-eyebrow text-muted">
+                    Control
+                  </p>
+                  <div className="mt-3 h-16 rounded bg-border-subtle" />
+                  <p className="mt-3 text-sm text-secondary">Copy only</p>
+                  <p className="mt-2 font-display text-lg font-bold text-primary">
+                    2,400 clicks
+                  </p>
+                </div>
+                <div className="rounded-lg bg-bg p-4">
+                  <p className="font-mono text-xs uppercase tracking-eyebrow text-muted">
+                    Winner
+                  </p>
+                  <div className="mt-3 h-16 rounded bg-border-subtle" />
+                  <p className="mt-3 text-sm text-secondary">Copy + video</p>
+                  <p className="mt-2 font-display text-lg font-bold text-pendo-pink">
+                    2,832 clicks
+                  </p>
+                </div>
+              </div>
+
+              {/* Key metric */}
+              <div className="border-t border-border-subtle pt-4">
+                <div className="text-center">
+                  <p className="font-mono text-xs uppercase tracking-eyebrow text-muted">
+                    Lift
+                  </p>
+                  <p className="mt-2 font-display text-4xl font-bold text-pendo-pink">
+                    +18%
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         }
