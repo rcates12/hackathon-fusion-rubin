@@ -74,11 +74,13 @@ export function ProductHero({
   media,
   className,
 }: ProductHeroProps) {
+  const bgClass = theme === 'light' && layout === 'split' ? 'bg-[#EDEEE7]' : 'bg-bg';
+
   return (
     <section
       data-theme={theme}
       className={cn(
-        'relative bg-bg text-primary',
+        `relative ${bgClass} text-primary`,
         'min-h-[80vh] flex items-center',
         'py-20 sm:py-28',
         className,
@@ -123,8 +125,8 @@ function SplitLayout({
   media,
 }: LayoutProps) {
   return (
-    <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[1fr_1.15fr] lg:gap-16">
-      <div className="flex flex-col gap-6">
+    <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-[1fr_1.15fr] lg:gap-8">
+      <div className="flex flex-col gap-6 text-left">
         {eyebrow}
         <h1 className="font-display text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
           {headline}
