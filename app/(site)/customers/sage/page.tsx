@@ -76,8 +76,10 @@ export default function SageCustomerStoryPage() {
         subhead="A short video preview drove an 18% lift in CTA clicks — one of many wins from Sage’s new in-product testing practice."
         actions={
           <>
-            <CTAButton href="#story">Read the case study</CTAButton>
-            <CTAButton href="#guides" variant="ghost">
+            <CTAButton href="#story" variant="primary" theme="light" icon="arrow">
+              Read the case study
+            </CTAButton>
+            <CTAButton href="#guides" variant="ghost" theme="light">
               Explore Pendo Guides
             </CTAButton>
           </>

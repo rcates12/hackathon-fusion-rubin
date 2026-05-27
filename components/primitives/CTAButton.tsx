@@ -2,8 +2,8 @@
  * CTAButton — the canonical Pendo call-to-action button.
  *
  * Variants align with product-style-guide §9.2:
- *   - `primary`: filled with Pendo Pank (#FF4876), white label. Hover
- *     dims the fill slightly.
+ *   - `primary`: white fill (#ffffff), black text (#000000), with an animated
+ *     pank beam sweep effect. Canonical primary treatment for light themes.
  *   - `ghost`: low-contrast button — subtle border + muted label color.
  *     Used as a secondary CTA next to a `primary` (e.g., "Get a demo" +
  *     "See how it works").
@@ -32,6 +32,7 @@ type CTATheme = 'light' | 'dark';
 interface BaseProps {
   variant?: CTAVariant;
   theme?: CTATheme;
+  icon?: 'arrow';
   className?: string;
   children: ReactNode;
 }
@@ -49,34 +50,37 @@ type ButtonProps = BaseProps &
 export type CTAButtonProps = AnchorProps | ButtonProps;
 
 const base =
-  'inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 ' +
-  'font-medium text-sm transition focus-visible:outline-none ' +
+  'inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 ' +
+  'font-semibold text-sm transition focus-visible:outline-none ' +
   'focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 ' +
   'disabled:cursor-not-allowed disabled:opacity-50';
 
 const styles: Record<CTAVariant, string> = {
-  primary: 'bg-pendo-pink text-white hover:opacity-90',
+  primary: 'bg-white text-black hover:opacity-90 cta-beam-sweep',
   ghost:
-    'border border-border-default bg-transparent text-secondary hover:text-primary hover:border-primary',
+    'border border-[rgba(6,1,25,0.1)] bg-[rgba(6,1,25,0.04)] text-[rgba(6,1,25,0.6)] hover:text-primary hover:border-primary',
 };
 
 export function CTAButton(props: CTAButtonProps) {
   const variant = props.variant ?? 'primary';
   const className = cn(base, styles[variant], props.className);
+  const showArrow = props.icon === 'arrow' && variant === 'primary';
 
   if ('href' in props && props.href !== undefined) {
-    const { variant: _v, theme: _t, className: _c, children, href, ...rest } = props;
+    const { variant: _v, theme: _t, icon: _i, className: _c, children, href, ...rest } = props;
     return (
       <a href={href} className={className} {...rest}>
         {children}
+        {showArrow && <span aria-hidden="true">→</span>}
       </a>
     );
   }
 
-  const { variant: _v, theme: _t, className: _c, children, href: _h, ...rest } = props;
+  const { variant: _v, theme: _t, icon: _i, className: _c, children, href: _h, ...rest } = props;
   return (
     <button className={className} {...rest}>
       {children}
+      {showArrow && <span aria-hidden="true">→</span>}
     </button>
   );
 }
