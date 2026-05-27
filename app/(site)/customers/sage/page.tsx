@@ -9,17 +9,20 @@
  *
  * Planted weaknesses (kept in the page-body only — nav + footer are clean):
  *
- *   1. FLAT METRIC TILES (visual hierarchy)
- *      The three metric tiles directly below the hero use IDENTICAL
- *      treatment: same size, same weight, same color, same surface.
- *      The headline customer outcome (18% lift in CTA clicks) should
- *      dominate — instead it sits as visually-equal sibling next to
- *      ancillary stats (40–50 concurrent guides, 2–3 week cadence).
- *      A customer-story hero metric is the SINGLE most important
- *      visual moment on the page; making it equivalent to its
- *      neighbors flattens the page's emotional arc. CORPUS exemplars
- *      treat headline stats with `<GradientText display>`, a larger
- *      type ramp, or a dedicated surface.
+ *   1. BURIED HEADLINE STAT (visual hierarchy — AMPLIFIED for demo)
+ *      The three metric tiles directly below the hero invert the
+ *      expected hierarchy: the 18% headline outcome is the SMALLEST
+ *      (`text-2xl`), LIGHTEST (`font-medium`), GREYEST (`text-muted`),
+ *      and LAST tile — while two ancillary stats (40–50 concurrent
+ *      guides, 2–3 wk cadence) get the largest, boldest, primary-color
+ *      treatment (`text-5xl font-bold text-primary`). A customer-story
+ *      hero metric is the SINGLE most important visual moment on the
+ *      page; subordinating it to ancillary stats is the kind of mistake
+ *      a marketer ships when they copy a "three stats" template without
+ *      thinking about which IS the headline. CORPUS exemplars treat
+ *      headline stats with `<GradientText display>`, a larger type
+ *      ramp, or a dedicated surface — Rubin should call this out
+ *      pointedly during the Audit Mode scan.
  *
  *   2. UNDERWEIGHTED PULL QUOTES (visual hierarchy)
  *      The two stakeholder quotes (John Gardiner) are rendered as
@@ -118,18 +121,26 @@ export default function SageCustomerStoryPage() {
 }
 
 /* ------------------------------------------------------------------ */
-/* Metrics row (PLANTED WEAKNESS #1 — flat tiles)                     */
+/* Metrics row (PLANTED WEAKNESS #1 — buried headline stat)           */
+/*                                                                    */
+/* AMPLIFIED for demo drama: the 18% headline outcome is intentionally */
+/* the SMALLEST, LIGHTEST, and LAST tile — visually subordinate to two */
+/* ancillary stats (40–50 concurrent guides, 2–3 wks cadence). When   */
+/* Audit Mode catches this and Fusion applies the fix (promote 18% to */
+/* GradientText display, move to first position, scale type ramp), the */
+/* before/after delta is visible from the back row of a demo audience. */
 /* ------------------------------------------------------------------ */
 
 interface Metric {
   value: string;
   label: string;
+  hero?: boolean;
 }
 
 const METRICS: Metric[] = [
-  { value: '18%', label: 'Increase in CTA clicks for an event-promotion guide' },
   { value: '40–50', label: 'Concurrent in-product guides running at any time' },
   { value: '2–3 wks', label: 'Typical experiment cadence per quarterly release' },
+  { value: '18%', label: 'Increase in CTA clicks for an event-promotion guide', hero: true },
 ];
 
 function MetricsRow() {
@@ -141,7 +152,13 @@ function MetricsRow() {
             key={m.label}
             className="flex flex-col gap-2 rounded-2xl border border-border-subtle bg-bg-card p-8"
           >
-            <p className="font-display text-4xl font-bold text-primary">
+            <p
+              className={
+                m.hero
+                  ? 'font-display text-2xl font-medium text-muted'
+                  : 'font-display text-5xl font-bold text-primary'
+              }
+            >
               {m.value}
             </p>
             <p className="text-sm text-secondary">{m.label}</p>

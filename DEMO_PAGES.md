@@ -141,28 +141,35 @@ Adapted from
 
 ### Planted weaknesses
 
-#### 1. Flat metric tiles
+#### 1. Buried headline stat (AMPLIFIED for demo drama)
 
-**What's planted.** The three metric tiles directly below the hero use
-**identical treatment**: same size (`text-4xl`), same weight (bold),
-same color (`text-primary`), same surface (`bg-bg-card` with
-`border-border-subtle`). The headline customer outcome (`18%` lift in
-CTA clicks) is visually identical to the ancillary stats
-(`40–50` concurrent guides, `2–3 wks` cadence).
+**What's planted.** The three metric tiles directly below the hero
+**invert the expected hierarchy**: the `18%` headline outcome is the
+**smallest** (`text-2xl`), **lightest** (`font-medium`), **greyest**
+(`text-muted`), and **last** tile. The two ancillary stats
+(`40–50` concurrent guides, `2–3 wks` cadence) get the **largest,
+boldest, primary-color** treatment (`text-5xl font-bold text-primary`).
 
-**Why it's plantable.** A customer-story hero metric is the SINGLE most
-important visual moment on the page. CORPUS exemplars treat headline
-stats with `<GradientText display>`, a 2–3× larger type ramp, or a
-dedicated surface. Making the hero metric equivalent to its neighbors
-flattens the page's emotional arc.
+**Why it's plantable AND demo-able.** A customer-story hero metric is
+the SINGLE most important visual moment on the page. The original
+"flat tiles" version was subtle — only a designer's eye caught it. The
+amplified version is **visible from the back row of a demo audience**:
+the most important number is the smallest, greyest, and tucked at the
+end. The fix (move 18% to first position, scale it 2–3×, apply
+`<GradientText display>`) produces an unmistakable before/after when
+Fusion lands the change.
+
+This is the kind of mistake a marketer ships when they copy a
+"three stats" template and don't think about which IS the headline.
 
 **Expected Rubin audit finding (paraphrased).**
 
-> _"Hero metric doesn't dominate. The 18% lift is the page's central
->  evidence and should command the most visual weight in the metrics
->  row — currently it's a peer of 40–50 and 2–3 wks. Treat the 18% with
->  `<GradientText display>` or scale its type ramp 2× so it reads as
->  the headline stat, not a sibling."_
+> _"Hero metric is buried. The 18% lift is the page's central evidence
+>  but currently renders as the smallest, lightest, last tile —
+>  visually subordinate to ancillary metrics. Promote it to the
+>  visual anchor of the row: move to first position, scale 2–3× with
+>  `<GradientText display>`, and demote the ancillary stats to a
+>  smaller satellite treatment."_
 
 #### 2. Underweighted pull quotes
 
@@ -211,8 +218,10 @@ to surface audit findings that name BOTH:
 
 If only one lands, the missed one needs amplification:
 
-- For the metric tiles: stack them in a single row at smaller size, or
-  bump the body text up so the metric values look even more pedestrian.
+- For the metric tiles: already amplified once (see "AMPLIFIED for demo
+  drama" above). Next-level amplification would be to drop the 18%
+  tile's border entirely so it visually disappears off the row, or
+  to shrink it to a single body-text line beneath the other two.
 - For the pull quotes: remove the `mt-6` spacing so they sit even more
   flush with the body, making the "lost in prose" feel obvious.
 
