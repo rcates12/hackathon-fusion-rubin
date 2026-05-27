@@ -207,25 +207,42 @@ const METRICS: Metric[] = [
 
 function MetricsRow() {
   return (
-    <Container as="section" className="border-t border-border-subtle py-16 sm:py-20">
-      <div id="story" className="grid grid-cols-1 gap-6 sm:grid-cols-3">
-        {METRICS.map((m) => (
-          <div
-            key={m.label}
-            className="flex flex-col gap-2 rounded-2xl border border-border-subtle bg-bg-card p-8"
-          >
-            <p
-              className={
-                m.hero
-                  ? 'font-display text-5xl font-bold text-primary'
-                  : 'font-display text-2xl font-medium text-muted'
-              }
-            >
-              {m.value}
-            </p>
-            <p className="text-sm text-secondary">{m.label}</p>
-          </div>
-        ))}
+    <Container as="section" className="py-20 sm:py-24">
+      <style>{`
+        .stat-gradient {
+          background: linear-gradient(135deg, #97127a 0%, #d80574 35%, #fd6aa5 70%, #ff9ed7 100%);
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+        .divider {
+          width: 1px;
+          height: 80px;
+          background-color: rgba(6, 1, 25, 0.08);
+        }
+      `}</style>
+      <div className="flex flex-col items-center gap-12">
+        <div className="flex items-center gap-3">
+          <div className="w-3 h-px bg-pendo-pink" />
+          <p className="font-sans font-bold text-xs uppercase tracking-widest text-pendo-pink">
+            By the numbers
+          </p>
+        </div>
+        <div id="story" className="flex items-center justify-center gap-12">
+          {METRICS.map((m, i) => (
+            <div key={m.label} className="flex items-center gap-12">
+              <div className="flex flex-col items-center gap-2">
+                <p className="stat-gradient font-display text-7xl font-bold">
+                  {m.value}
+                </p>
+                <p className="text-sm text-center text-muted font-sans" style={{ maxWidth: '120px' }}>
+                  {m.label.split(' ').slice(0, 4).join(' ')}
+                </p>
+              </div>
+              {i < METRICS.length - 1 && <div className="divider" />}
+            </div>
+          ))}
+        </div>
       </div>
     </Container>
   );
