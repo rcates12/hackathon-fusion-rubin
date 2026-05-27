@@ -69,8 +69,9 @@ export default function SageCustomerStoryPage() {
         eyebrow={<Eyebrow>Customer story</Eyebrow>}
         headline={
           <>
-            How <GradientText>Sage</GradientText> scaled data-driven in-product
-            messaging with Pendo Guide experiments
+            How Sage scaled{' '}
+            <span style={{ color: '#FF4876' }}>data-driven in-product messaging</span> with
+            Pendo Guide experiments
           </>
         }
         subhead="A short video preview drove an 18% lift in CTA clicks — one of many wins from Sage’s new in-product testing practice."
