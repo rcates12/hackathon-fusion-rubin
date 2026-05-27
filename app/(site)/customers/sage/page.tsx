@@ -155,8 +155,8 @@ function MetricsRow() {
             <p
               className={
                 m.hero
-                  ? 'font-display text-2xl font-medium text-muted'
-                  : 'font-display text-5xl font-bold text-primary'
+                  ? 'font-display text-5xl font-bold text-primary'
+                  : 'font-display text-2xl font-medium text-muted'
               }
             >
               {m.value}
