@@ -64,7 +64,7 @@ export default function SageCustomerStoryPage() {
   return (
     <>
       <ProductHero
-        layout="centered"
+        layout="split"
         theme="light"
         eyebrow={<Eyebrow>Customer story</Eyebrow>}
         headline={
@@ -81,6 +81,16 @@ export default function SageCustomerStoryPage() {
               Explore Pendo Guides
             </CTAButton>
           </>
+        }
+        media={
+          <div className="rounded-2xl bg-bg-card p-8 shadow-lg">
+            <div className="aspect-video rounded-xl bg-gradient-to-br from-bg-elevated to-bg-card flex items-center justify-center">
+              <div className="text-center">
+                <p className="font-display text-2xl font-bold text-primary mb-2">Pendo Guides</p>
+                <p className="text-sm text-secondary">A/B Testing & Experiments</p>
+              </div>
+            </div>
+          </div>
         }
       />
 
