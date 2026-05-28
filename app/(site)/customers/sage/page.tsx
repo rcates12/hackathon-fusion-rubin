@@ -69,8 +69,8 @@ export default function SageCustomerStoryPage() {
         eyebrow={<Eyebrow>Customer story</Eyebrow>}
         headline={
           <>
-            Ship what works.{' '}
-            <span className="text-pendo-pink">Prove it with experiments.</span>
+            Ship what works. Prove it{' '}
+            <span className="text-pendo-pink">with experiments.</span>
           </>
         }
         subhead="A short video preview drove an 18% lift in CTA clicks — one of many wins from Sage’s new in-product testing practice."
